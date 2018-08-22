@@ -1,0 +1,41 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>gird-template-areas</title>
+  <link rel="stylesheet" type="text/css" href="grid-1-deco.css">
+  <style>
+  div.container{
+    height: 100%;
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 100px auto 100px;
+    grid-template-areas:
+        "h h h h h h h h"
+        "m c c c c c c c"
+        "f f f f f f f f"
+  }
+  div.head{
+    grid-area: h;
+  }
+  div.menu{
+    grid-area: m;
+  }
+  div.content{
+    grid-area: c;
+  }
+  div.footer{
+    grid-area: f;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="head">head</div>
+    <div class="menu">menu</div>
+    <div class="content">content</div>
+    <div class="footer">footer</div>
+  </div>
+</body>
+</html>

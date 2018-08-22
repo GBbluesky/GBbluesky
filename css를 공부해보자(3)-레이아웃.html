@@ -1,0 +1,53 @@
+<!doctypeHTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>css를 공부해보자(3) 레이아웃</title>
+  <style>
+  @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+  body{
+    font-size: 16px;
+    font-family: "noto sans KR", sans-serif;
+    font-weight: 400;
+  }
+  img.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  div.explanation{
+    font-size: 15px;
+    font-weight: lighter;
+    color: gray;
+    text-align: center;
+  }
+  a.link{
+    font-size: 20px;
+    font-weight: bold;
+    color: green;
+    text-decoration: none;
+    display: block;
+    border: solid; 2px;
+    border-style: solid;
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+  </style>
+
+<body>
+ <h1>css를 공부해보자(3)</h1>
+ <p>css를 공부하는 이유는 블로그를 꾸미기 위해서이다. (그리고 이렇게 글들을 적는 이유는 html과 css를 연습하기 위해서이고) css의 기초를 대충 보았으니 바로 블로그를 만들기 위한 공부를 하려고 한다.</p>
+ <p>우리가 눈으로 보는 웹페이지의 기초를 그리는 작업을 레이아웃이라고 생각한다. 그림을 그리기 전에 먼저 틀을 잡아야 하는 것이니까. </p>
+ <p>css에 어떤 레이아웃 기술들이 있는지 알아보기전에 내가 만들고 싶은 블로그의 형태부터 보고자 한다. 붓을 어떻게 다루는지 아는것도 중요하지만, 내가 그리고 싶은 그림이 먼저 있어야지 그에 맞춰 어떤 방법들을 사용할지 알아보고 써먹을 수 있을 것이다.</p>
+ <img class="center" src="https://www.dropbox.com/s/4z46n5mfxovrust/%EB%8C%80%EC%A7%80%201-8.png?dl=1" alt="블로그 레이아웃 초안" width="80%">
+ <div class="explanation"><p>블로그 레이아웃 초안. 대충 만들어 보았다.</p></div>
+ <h2>어떻게 구현할 것인가?</h2>
+ <p>초안도 만들었으니 이제 레이아웃을 구현해보자. 단순히 블로그를 꾸미는 것이 목표라면 현재 티스토리에서 제공하는 스킨만으로도 충분히 가능할 것이다. 그러나 웹 개발을 공부하고 더 능숙해지는 것이 목표이니 직접 css를 공부해 레이아웃을 구현할 것이다.</p>
+ <h3>css그리드</h3>
+ <p>현재 최신기술 중 하나가 'css그리드''라고 한다. 또 하나는 bootstrap이라는 기술이 있다는데 생활코딩에서 배운것이 그리드이기도 하고 그리드를 익히는 것을 목표로 하려고 한다. 찾아보니 그리드를 무료로 공부할 수 있는 사이트가 있어서 여기서 그리드를 공부하고자 한다.</p>
+ <a class="link" href="https://scrimba.com/g/gR8PTE">scrimba - Learn CSS Grid for free</a>
+
+
+</body>
+</html>

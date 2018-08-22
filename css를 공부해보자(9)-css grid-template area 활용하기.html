@@ -1,0 +1,59 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="bluesky">
+  <meta name="description" content="웹에 대해 아무것도 모르는 사람이 블로그 하나 만들어보자고 좌충우돌 하는 공간입니다. CSS grid를 이용해 블로그 레이아웃을 만들어 보고자 합니다">
+  <title>css를 공부해보자(9)-CSS Grid-template area</title>
+  <style>
+  @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+  body{
+    font-size: 16px;
+    font-family: "noto sans KR", sans-serif;
+    font-weight: 400;
+  }
+  img.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  </style>
+</head>
+<body>
+  <h1>css를 공부해보자(9)-CSS Grid-template area 활용하기</h1>
+  <p> template area를 활용하여 보다 직관적으로 레이아웃을 구성하는 방법을 알게되어 정리한다. </p>
+  <h2> grid-template-areas: </h2>
+  <p>css grid를 다음과 같이 작성한다.</p>
+  <pre><code>
+    .container {
+      display: grid;
+      grid-gap: 3px;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 100px auto 100px;
+    }</code></pre>
+    <p> 이렇게 구성할 경우 3 * 8 의 grid area가 구성될 것이다. 이제 여기에 다음과 같은 코드를 추가한다. </p>
+    <pre><code>
+      grid-template-areas:
+        "h h h h h h h h"
+        "m c c c c c c c"
+        "f f f f f f f f"
+      </code></pre>
+      <p>그리고 자식 태그들의 그리드 속성을 다음과 같이 작성한다.</p>
+      <pre><code>
+        .header {
+        grid-area: h;
+      }
+      .menu {
+        grid-area: m;
+      }
+      .content{
+        grid-area: c;
+      }
+      .footer {
+        grid-area: f;
+      }</code></pre>
+      <p>그럼 다음과 같이 레이아웃이 구성된다</p>
+      <img class="center" src="https://www.dropbox.com/s/lrfbv3r82z03ei9/Screenshot_2018-08-22%20gird-template-areas.png?dl=1" alt="grid-template-area를 활용한 레이아웃" width="90%">
+      <p>area의 숫자가 많아지면 활용하기 힘들겠지만, 숫자가 많지 않고 단순한 레이아웃을 짤때는 직관적으로 짤 수 있는 좋은 방법인 것 같다.</p>
+</body>
+</html>

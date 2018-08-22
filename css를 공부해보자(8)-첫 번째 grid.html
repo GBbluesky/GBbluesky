@@ -1,0 +1,106 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="bluesky">
+  <meta name="description" content="웹에 대해 아무것도 모르는 사람이 블로그 하나 만들어보자고 좌충우돌 하는 공간입니다. CSS grid를 이용해 블로그 레이아웃을 만들어 보고자 합니다">
+  <title>css를 공부해보자 (8)</title>
+  <style>
+  @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+  body{
+    font-size: 16px;
+    font-family: "noto sans KR", sans-serif;
+    font-weight: 400;
+  }
+  img.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  </style>
+</head>
+<body>
+  <h1>css를 공부해보자 (8) - 첫 번째 grid</h1>
+  <p> 지금까지 공부한 css grid를 활용해 내가 만들고 싶었던 레이아웃을 만들어보았다. 만들고나니 아쉽고 부족한 점이 많다. grid를 배운 후 다른 css 기법들을 어서 배워야 겠다.</p>
+  <h2>내가 만든 첫 번째 grid 레이아웃</h2>
+  <p> <a href="http://biunion.tistory.com/5?category=674439">css를 공부해보자(3)-css layout</a>에서 내가 만들고 싶은 레이아웃을 올렸었다. grid를 활용해 레이아웃을 만들었던 과정을 간략히 정리해보도록 하겠다.</p>
+  <h2> grid layout 만들기 </h2>
+  <h3> 1. html 작성 </h3>
+  <p> html은 다음과 같이 작성하였다.</p>
+  <img class="center" src="https://www.dropbox.com/s/hsrz9uc74oyntji/html%20%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83.PNG?dl=1" alt="그리드를 위한 html 코드" width="400px">
+  <h3> 2. grid css 작성 </h3>
+  <p>앞서 작성한 html를 바탕으로 다음과 같이 grid를 짜보았다. </p>
+  <pre><code>
+    .container{
+      height: 100%;
+      margin: 10px;
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      grid-template-rows: 50px 300px 400px 50px 150px 200px;
+      grid-gap: 3px;
+    }
+    .header{
+      grid-column: 1 / -1;
+    }
+    .mainimage{
+      grid-column: 1 / -1;
+    }
+    .menu{
+      grid-column: 1 / 3;
+    }
+    .content{
+      grid-column: 3 / -2;
+    }
+    .tag{
+      grid-column: 3 / 11;
+    }
+    .prev1{
+      grid-column: 3 / 5;
+    }
+    .prev2{
+      grid-column: 6 / 8;
+    }
+    .prev3{
+      grid-column: 9 / 11;
+    }
+    .comment{
+      grid-column: 3 / 11;
+    }</code></pre>
+    <p>위와 같이 grid를 구성했을때 다음과 같은 화면이 나온다.</p>
+    <img class="center" src="https://www.dropbox.com/s/gj560y1nr9df5p6/Screenshot_2018-08-21%20grid-1%282%29.png?dl=1" alt="그리드만 적용된 모습" width="80%" style="border:solid 2px;">
+    <p>그리드를 구성하던 중 실수한 부분이 있다. repeat(11, 1fr);를 repeat (11, 1fr);이라고 작성한 것. 띄어쓰기를 하면 안되는데 띄어쓰기를 하여 적용이 되지 않았다. 코드를 작성할 때 띄어쓰기 하나도 주의해야 겠다.</p>
+    <h3> 3. css를 활용하여 꾸미기 </h3>
+    <p>그리드는 원하는대로 짜여졌지만 화면이 많이 허전해보인다. 그래서 다음과 같은 css를 추가로 작성하였다.
+  <pre><code>
+    html, body{
+      box-sizing: border-box;
+      background-color: #F7E967;
+      height: 100%
+      padding: 20px;
+      margin: 0px;
+    }
+    .container > div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      color: #Ffffff;
+    }
+    .container > div:nth-child(1n){
+      background-color: #588F27;
+    }
+    .container > div:nth-child(2n){
+      background-color: #CAFCD8;
+    }
+    .container > div:nth-child(3n){
+      background-color: #A9CF54;
+    }
+    .container > div:nth-child(4n){
+      background-color: #04BFBF;
+    }</code></pre></p>
+    <p> 처음보는 속성들(div:ntn-child(2n))은 "learn CSS grid for free"에서 따왔다. 영상에서 사용한 코드들을 베끼면서 연습하였다. "div:ntn-child(an+b)"는 선택자를 다루는 기법이다. an+b를 수열처럼 활용하여 부모태그 아래있는 자식태그를 선택한다. 2n 일경우 짝수, 3n일 경우 3의 배수번째 자식태그들을 선택한다. 이를 적용하여 최종적으로 만든 화면은 다음과 같다. </p>
+    <img class="center" src="https://www.dropbox.com/s/dp3j0o2pl0hrqok/Screenshot_2018-08-21%20grid-1%281%29.png?dl=1" alt="내가 만든 첫번째 그리드" width="80%">
+    <h2> 앞으로 배워야 할 것들 </h2>
+    <p> 만들고 싶었던 레이아웃을 만들었지만 여전히 많이 허접해보인다. 메뉴를 만드는 방법, 영역 배경에 이미지를 넣는 방법, 영역별로 스크롤이 분리되는 방법등 아직 배워야 할 것들이 많다. 더 나아가 반응형 웹을 만드는 방법도 익혀야 할 것이다. </p>
+</body>
+</html>

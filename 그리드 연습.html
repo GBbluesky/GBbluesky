@@ -1,0 +1,60 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>그리드연습</title>
+  <style>
+  div{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    border: solid white 3px;
+  }
+  div.wrapper{
+    display: grid;
+   grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+  }
+
+  .one{
+    grid-column: 1 / 4;
+  }
+
+  .three{
+    grid-row: 2 / 4;
+  }
+  .four{
+    grid-column: 2 / 4;
+  }
+  div.one{
+    background-color: #8CC4E4;
+  }
+  div.two{
+    background-color: #FA9BE7;
+  }
+  div.three{
+    background-color: #B4F0B4;
+  }
+  div.four{
+    background-color:#008C8C;
+  }
+  div.five{
+    background-color: #DB0068;
+  }
+  div.six{
+    background-color: #6495ED;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="one">1</div>
+    <div class="two">2</div>
+    <div class="three">3</div>
+    <div class="four">4</div>
+    <div class="five">5</div>
+    <div class="six">6</div>
+  </div>
+</body>
+</html>

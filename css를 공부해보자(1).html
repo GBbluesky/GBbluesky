@@ -1,0 +1,57 @@
+<!doctypeHTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>css를 공부해보자 1</title>
+  <style>
+  a.indocument{
+    font-weight: bold;
+    font-size: 15px;
+    color: green;
+    text-decoration: none;
+  }
+   div.indocument{
+     font-size: 12px;
+     color: gray;
+     text-align: center;
+   }
+   .image{
+     font-size: 15px;
+     color: gray;
+   }
+   .center{
+     max-width: 700px;
+     margin: 0 auto;
+   }
+   dt{
+     font-size: 18px;
+     font-weight: bold;
+     margin: 10px;
+
+   }
+  </style>
+</head>
+<body>
+  <h1>css를 공부해보자(1)</h1>
+<p> 블로그를 어떻게 디자인할까 고민하다가 css를 다시 공부하고 있다. 생활코딩에서 한 번 강의를 들었지만 막상 내가 하고 싶은 디자인들을 구현하고자 한-참 부족하다는 걸 느꼈다. 아직 머릿속에 구조화가 되지 않다는걸 느끼고 <a class="indocument" href="https://www.w3schools.com/">wc3schools</a>라는 곳과 <a class="indocument" href="https://developer.mozilla.org/en-US/docs/Web/CSS">모질라의 개발자 커리큘럼</a>에서 css를 공부하고 있다. 영어로 되어있는 사이트긴 하지만 그리 어렵지 않고 attribute라던가, element등의 단어는 html, css에서 고유의 뜻을 가지고 있어서 배우기 어렵지 않은 것 같다. </p><br>
+ <h2> CSS(cascading style sheets)는 무엇인가?</h2>
+ <p> css의 뜻을 직역하면 '종속형 스타일 시트'이다. css 단일로는 아무것도 할 수 없다.(내가 이해한 바로는)  html문서에 결합되어 html 문서를 꾸며서 화면에 보여주는 역할을 한다. 때문에 cascading이라는 말이 붙은 것 같다.</p> <img src="https://mdn.mozillademos.org/files/11781/rendering.svg" alt="css작동방식" width="100%"> <div> html과 css의 작용 흐름을 보여주는 그림. <a class="image" href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/How_CSS_works#What_is_CSS">모질라의 css설명페이지</a>에서 가져왔다. </div><br>
+
+ <h2> css syntax - css는 어떻게 이루어져 있을까? </h2>
+ <p> 겉으로 보기에는 엄청 복잡하지만 css도 결국 하나의 언어이고 문법이 있다. css의 구문(syntax)은 다음과 같다.</p>
+ <div class="center"><img src="https://www.w3schools.com/css/selector.gif" alt="css 구문" width="80%"><br></div> <div>css 구문를 설명한 그림. <a class="image" href="https://www.w3schools.com/css/css_syntax.asp">W3SCHOOLS</a>에서 가져왔다</div>
+ <dl>
+   <dt>Selector(선택자)</dt>
+   <dd>선택자는 스타일을 넣고 싶은 html태그를 선택하는 역할이다. 예를 들어 h1태그로 묶은 제목의 크기를 키워주고 싶다면 h1태그를 넣는다. </dd>
+   <dt>Declaration(선언)</dt>
+   <dd>선언은 선택자에서 선택한 html태그에 어떤 속성들을 어떤 값으로 넣을지가 서술되는 자리이다. 선언은 Property(속성)과 Value(값)의 대응들로 구성된다.</dd>
+   <dt>Property(속성)과 Value(값)</dt>
+   <dd>속성은 어떤 css기능을 구현할지, 값은 속성에서 선택한 css기능의 값을 정해주는 역할이다.</dd>
+ </dl>
+ <p> 이렇게 썼지만 이해가 쉽게 되지는 않는다면 다음 비유를 생각해보면 쉬울 것이다. 게임에서 아이템에 인챈트를 한다고 생각해보자. 인챈트를 통해 롱소드에 화염데미지 +10를 추가하려고 한다. 이때 선택자는 롱소드, 선언은 화염데미지 스크롤, 속성은 화염, 값은 +10이 될 것이다. </p>
+ <div class="center"><img src="https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/219/1000/1000/636284733648450283.jpeg" alt="화염소드" width="80%"></div>
+ <div class="image"> rpg게임을 좀 해본 사람은 쉽게 이해될 것이다. </div><br>
+ <p>선택자들의 종류와 속성은 어떤 것들이 파고들어가는 것은 다음 시간에 천천히 하도록 하겠다.</p>
+
+</body>
+</html>
